@@ -22,4 +22,15 @@ class PostAPIController {
 		}
 	}
 	
+	public func post(post:Post, completion: @escaping () -> ()) {
+		let api = "https://mobile-code-test.ifactornotifi.com/json/posts"
+		
+		Alamofire.request(api, method: .post, parameters: post.toJSON(), encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<Post>) in
+			
+			let postResponse = response.result.value
+			print(postResponse!)
+		}
+		
+	}
+	
 }

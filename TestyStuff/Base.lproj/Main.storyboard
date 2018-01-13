@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,12 +99,91 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Posts" id="Z8i-Jd-roh">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="VgP-Na-H5G"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="o0v-a0-iPP">
+                            <connections>
+                                <segue destination="Ir7-k5-4gs" kind="show" identifier="userPost" id="gK5-Uz-eYW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ge-ty-2Jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="428" y="743"/>
+        </scene>
+        <!--Post-->
+        <scene sceneID="8M7-MJ-o5x">
+            <objects>
+                <viewController title="Post" id="Ir7-k5-4gs" customClass="PostViewController" customModule="TestyStuff" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ZQ-fp-Wmz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0k-Ny-5E4">
+                                <rect key="frame" x="16" y="74" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvX-3u-C3N">
+                                <rect key="frame" x="16" y="181" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYa-Y7-M9a">
+                                <rect key="frame" x="16" y="103" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ir7-k5-4gs" id="HOM-qe-T9u"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vmG-Hq-mci">
+                                <rect key="frame" x="16" y="210" width="343" height="413"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ir7-k5-4gs" id="aoY-ll-Jdi"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q0k-Ny-5E4" firstAttribute="leading" secondItem="2ZQ-fp-Wmz" secondAttribute="leadingMargin" id="3Qz-nY-0BG"/>
+                            <constraint firstItem="vmG-Hq-mci" firstAttribute="bottom" secondItem="u7m-fU-hs6" secondAttribute="bottom" id="Ddy-Pp-qKS"/>
+                            <constraint firstItem="JvX-3u-C3N" firstAttribute="top" secondItem="AYa-Y7-M9a" secondAttribute="bottom" constant="48" id="O7P-ir-rea"/>
+                            <constraint firstItem="AYa-Y7-M9a" firstAttribute="trailing" secondItem="JvX-3u-C3N" secondAttribute="trailing" id="QHx-ny-bnG"/>
+                            <constraint firstItem="Q0k-Ny-5E4" firstAttribute="top" secondItem="u7m-fU-hs6" secondAttribute="top" constant="10" id="UYX-ti-726"/>
+                            <constraint firstItem="Q0k-Ny-5E4" firstAttribute="trailing" secondItem="AYa-Y7-M9a" secondAttribute="trailing" id="baZ-O6-esX"/>
+                            <constraint firstItem="Q0k-Ny-5E4" firstAttribute="leading" secondItem="AYa-Y7-M9a" secondAttribute="leading" id="brR-lZ-x0J"/>
+                            <constraint firstItem="JvX-3u-C3N" firstAttribute="leading" secondItem="vmG-Hq-mci" secondAttribute="leading" id="eMk-lX-oMS"/>
+                            <constraint firstItem="AYa-Y7-M9a" firstAttribute="top" secondItem="Q0k-Ny-5E4" secondAttribute="bottom" constant="8" symbolic="YES" id="fYk-pU-br9"/>
+                            <constraint firstItem="AYa-Y7-M9a" firstAttribute="leading" secondItem="JvX-3u-C3N" secondAttribute="leading" id="hcS-qX-9la"/>
+                            <constraint firstItem="Q0k-Ny-5E4" firstAttribute="trailing" secondItem="2ZQ-fp-Wmz" secondAttribute="trailingMargin" id="kDH-gc-1Ed"/>
+                            <constraint firstItem="JvX-3u-C3N" firstAttribute="trailing" secondItem="vmG-Hq-mci" secondAttribute="trailing" id="nBx-nw-X6K"/>
+                            <constraint firstItem="vmG-Hq-mci" firstAttribute="top" secondItem="JvX-3u-C3N" secondAttribute="bottom" constant="8" symbolic="YES" id="or4-w6-nKS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u7m-fU-hs6"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Post" id="vfk-Fj-24D">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DDh-f9-7uK">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="Ir7-k5-4gs" id="J9r-gm-qY2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="postField" destination="vmG-Hq-mci" id="dqm-R1-6yj"/>
+                        <outlet property="titleField" destination="AYa-Y7-M9a" id="f8Y-Eg-Ahi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uG-uf-3fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405.5999999999999" y="457.42128935532236"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qzW-J9-F0C">

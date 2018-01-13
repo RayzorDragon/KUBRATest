@@ -70,4 +70,25 @@ class PostsViewController: UITableViewController {
 		
 		return cell
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
+		if segue.identifier == "userPost" {
+			let postVC = segue.destination as? PostViewController
+			postVC?.user = user
+		} else if segue.identifier == "userPostEdit" {
+			
+			guard let cell = sender as? UITableViewCell,
+				let indexPath = tableView.indexPath(for: cell) else {
+					return
+			}
+			
+			let index = indexPath.row
+			let selectedPost = posts[index]
+			
+			let postVC = segue.destination as? PostViewController
+			postVC?.user = user
+			postVC?.post = selectedPost
+		}
+	}
 }

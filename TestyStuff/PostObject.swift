@@ -15,6 +15,27 @@ class Post: Mappable {
 	var title: String?
 	var body: String?
 	
+	convenience init?(id: Int?, userId: Int?, title: String?, body: String?) {
+		
+		var json = [ String: Any ]()
+		if id != nil {
+			json["id"] = id
+		}
+		if userId != nil {
+			json["userId"] = userId
+		}
+		if title != nil {
+			json["title"] = title
+		}
+		if body != nil {
+			json["body"] = body
+		}
+		
+		let map = Map.init(mappingType: MappingType.fromJSON, JSON:json)
+		self.init(map: map)
+		self.mapping(map: map)
+	}
+	
 	required init?(map: Map) {
 		
 	}
