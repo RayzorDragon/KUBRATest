@@ -31,6 +31,14 @@ class PostsViewController: UITableViewController {
 		}
 	}
 	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		if user != nil {
+			getDataForTable()
+		}
+	}
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
@@ -38,11 +46,12 @@ class PostsViewController: UITableViewController {
 	
 	func getDataForTable() {
 		posts.removeAll()
-		postController.fetch(user: self.user!) { (postArray) in
-			print(postArray)
-			self.posts = postArray
-			DispatchQueue.main.async {
-				self.tableView.reloadData()
+		postController.fetch(user: self.user!) { (postArray, error) in
+			if let postsArray = postArray {
+				self.posts = postsArray
+				DispatchQueue.main.async {
+					self.tableView.reloadData()
+				}
 			}
 		}
 	}
@@ -71,6 +80,21 @@ class PostsViewController: UITableViewController {
 		return cell
 	}
 	
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == .delete {
+			postController.delete(post: posts[indexPath.row], completion: { (deletedPost, error) in
+				if deletedPost != nil {
+					self.posts.remove(at: indexPath.row)
+					DispatchQueue.main.async {
+						self.tableView.reloadData()
+					}
+				}
+			})
+		} else {
+			
+		}
+	}
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		
 		if segue.identifier == "userPost" {
@@ -91,4 +115,6 @@ class PostsViewController: UITableViewController {
 			postVC?.post = selectedPost
 		}
 	}
+	
+	
 }

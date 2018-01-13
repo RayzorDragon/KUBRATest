@@ -91,6 +91,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ir7-k5-4gs" kind="show" identifier="userPostEdit" id="BEl-AH-bGH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -202,4 +205,7 @@
             <point key="canvasLocation" x="-524" y="-19"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BEl-AH-bGH"/>
+    </inferredMetricsTieBreakers>
 </document>

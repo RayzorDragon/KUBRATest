@@ -27,11 +27,12 @@ class UsersViewController: UITableViewController {
 	
 	func getDataForTable() {
 		users.removeAll()
-		userController.fetch { (userArray) in
-			print(userArray)
-			self.users = userArray
-			DispatchQueue.main.async {
-				self.tableView.reloadData()
+		userController.fetch { (userArray, error)  in
+			if let usersArray = userArray {
+				self.users = usersArray
+				DispatchQueue.main.async {
+					self.tableView.reloadData()
+				}
 			}
 		}
 	}

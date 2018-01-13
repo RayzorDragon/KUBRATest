@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestyStuff/UserAPIController.swift"
-            timestampString = "537512386.665555"
+            timestampString = "537572892.9701101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestyStuff/UsersViewController.swift"
-            timestampString = "537512386.665748"
+            timestampString = "537572892.970557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestyStuff/UserAPIController.swift"
-            timestampString = "537512386.665843"
+            timestampString = "537572892.970844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestyStuff/UsersViewController.swift"
-            timestampString = "537512386.6659499"
+            timestampString = "537572892.970966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestyStuff/UsersViewController.swift"
-            timestampString = "537512386.6660531"
+            timestampString = "537572892.971126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestyStuff/AppDelegate.swift"
-            timestampString = "537470611.0435621"
+            timestampString = "537572662.912064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestyStuff/PostAPIController.swift"
-            timestampString = "537512386.666458"
+            timestampString = "537572892.9716541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -246,31 +246,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TestyStuff.PostAPIController.post(post: TestyStuff.Post, completion: () -&gt; ()) -&gt; ()"
+                  symbolName = "TestyStuff.PostAPIController.post(post: TestyStuff.Post, completion: (Swift.Optional&lt;TestyStuff.Post&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "TestyStuff"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/raymondgatz/Development/TestyStuff/TestyStuff/PostAPIController.swift"
-                  timestampString = "537512386.855835"
+                  timestampString = "537572893.060133"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
                   endingLineNumber = "28"
-                  offsetFromSymbolStart = "88">
+                  offsetFromSymbolStart = "94">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;TestyStuff.Post&gt;) -&gt; () in TestyStuff.PostAPIController.post(post: TestyStuff.Post, completion: () -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;TestyStuff.Post&gt;) -&gt; () in TestyStuff.PostAPIController.post(post: TestyStuff.Post, completion: (Swift.Optional&lt;TestyStuff.Post&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "TestyStuff"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/raymondgatz/Development/TestyStuff/TestyStuff/PostAPIController.swift"
-                  timestampString = "537512386.859074"
+                  timestampString = "537572893.064116"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
                   endingLineNumber = "30"
-                  offsetFromSymbolStart = "170">
+                  offsetFromSymbolStart = "193">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -281,30 +281,24 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestyStuff/PostObject.swift"
-            timestampString = "537512386.667106"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "mapping(map:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TestyStuff/PostAPIController.swift"
-            timestampString = "537512500.782306"
+            timestampString = "537572892.972093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "post(post:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

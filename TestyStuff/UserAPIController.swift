@@ -14,12 +14,12 @@ class UserAPIController {
 	
 	let api = "https://mobile-code-test.ifactornotifi.com/json/users"
 	
-	public func fetch(completion: @escaping (Array<User>) -> ()) {
+	public func fetch(completion: @escaping (Array<User>?, Error?) -> ()) {
 		
 		Alamofire.request(api).responseArray { (response: DataResponse<[User]>) in
 			
 			let userReponse = response.result.value
-			completion(userReponse!)
+			completion(userReponse!, nil)
 		}
 	}
 	

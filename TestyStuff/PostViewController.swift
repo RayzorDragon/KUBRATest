@@ -49,17 +49,26 @@ class PostViewController: UIViewController {
 		print("Saving")
 		if self.post != nil {
 			print("Do a Put/Patch")
+			let newPost = Post.init(id: post?.id, userId: post?.userId, title: self.titleField?.text, body: self.postField.text)
+			
+			self.postController.put(post: newPost!, completion: { (post, error) in
+				if post != nil {
+					print("Post Finished")
+					self.navigationController?.popViewController(animated: true)
+				}
+			})
 		} else {
 			print("Do a Post")
 			let newPost = Post.init(id: nil, userId: user?.id, title: self.titleField?.text, body: self.postField.text)
-			
-			self.postController.post(post: newPost!, completion: {
-				print("Post Finished")
+
+			self.postController.post(post: newPost!, completion: { (post, error) in
+				if post != nil {
+					print("Post Finished")
+					self.navigationController?.popViewController(animated: true)
+				}
 			})
 		}
 	}
-	
-	
 	
 }
 
