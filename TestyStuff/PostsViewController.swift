@@ -117,7 +117,6 @@ class PostsViewController: UITableViewController {
 	}
 	
 	@IBAction func postsAtoZ(){
-		print("A to Z Sort")
 		let sortedArray = posts.sorted { (postA, postB) -> Bool in
 			if postA.title! < postB.title! {
 				return true
@@ -132,7 +131,6 @@ class PostsViewController: UITableViewController {
 	}
 	
 	@IBAction func postsZtoA(){
-		print("Z to A Sort")
 		let sortedArray = posts.sorted { (postA, postB) -> Bool in
 			if postB.title! < postA.title! {
 				return true
@@ -147,7 +145,6 @@ class PostsViewController: UITableViewController {
 	}
 	
 	@IBAction func postsIDSort(){
-		print("ID Sort")
 		let sortedArray = posts.sorted { (postA, postB) -> Bool in
 			if postA.id! < postB.id! {
 				return true
