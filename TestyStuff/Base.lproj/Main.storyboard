@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,12 +102,30 @@
                             <outlet property="delegate" destination="aso-tf-L3b" id="du9-ua-KoP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Posts" id="Z8i-Jd-roh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="o0v-a0-iPP">
+                    <navigationItem key="navigationItem" title="Posts" leftItemsSupplementBackButton="YES" id="Z8i-Jd-roh">
+                        <barButtonItem key="leftBarButtonItem" title="Id" id="iGO-Px-sji">
                             <connections>
-                                <segue destination="Ir7-k5-4gs" kind="show" identifier="userPost" id="gK5-Uz-eYW"/>
+                                <action selector="postsIDSort" destination="aso-tf-L3b" id="n4q-Yc-slK"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="o0v-a0-iPP">
+                                <connections>
+                                    <action selector="postsIDSort" destination="aso-tf-L3b" id="R9p-Fy-oE1"/>
+                                    <segue destination="Ir7-k5-4gs" kind="show" identifier="userPost" id="m1i-kA-5We"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="A to Z" id="x7J-zf-DLC">
+                                <connections>
+                                    <action selector="postsAtoZ" destination="aso-tf-L3b" id="Lvq-Pu-Pdo"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Z to A" id="Wmm-cP-37b">
+                                <connections>
+                                    <action selector="postsZtoA" destination="aso-tf-L3b" id="dfd-pd-efp"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ge-ty-2Jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -206,6 +225,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BEl-AH-bGH"/>
+        <segue reference="m1i-kA-5We"/>
     </inferredMetricsTieBreakers>
 </document>
